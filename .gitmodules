@@ -1,0 +1,6 @@
+[submodule "clipp"]
+	path = clipp
+	url = https://github.com/muellan/clipp.git
+[submodule "fmt"]
+	path = fmt
+	url = https://github.com/fmtlib/fmt.git
