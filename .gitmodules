@@ -1,15 +1,15 @@
 [submodule "clipp"]
-	path = clipp
-	url = https://github.com/muellan/clipp.git
+    path = clipp
+    url = https://github.com/muellan/clipp.git
 [submodule "fmt"]
-	path = fmt
-	url = https://github.com/fmtlib/fmt.git
+    path = fmt
+    url = https://github.com/fmtlib/fmt.git
 [submodule "json"]
-	path = json
-	url = https://github.com/nlohmann/json.git
+    path = json
+    url = https://github.com/nlohmann/json.git
 [submodule "cmake"]
-	path = cmake
-	url = git@github.com:cubao/cmake.git
+    path = cmake
+    url = https://github.com/cubao/cmake.git
 [submodule "mongoose"]
-	path = mongoose
-	url = https://github.com/cesanta/mongoose.git
+    path = mongoose
+    url = https://github.com/cesanta/mongoose.git
