@@ -6,4 +6,5 @@ Some small C++ libraries.
 
 -   argparse: clipp/include/clipp.h
 -   string formating: fmt/include/fmt
+-   json: json/single_include/nlohmann/json.hpp
 
