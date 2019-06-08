@@ -17,35 +17,36 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
 include_directories(
-    ${PROJECT_SOURCE_DIR}/clipp/include
-    ${PROJECT_SOURCE_DIR}/fmt/include
-    ${PROJECT_SOURCE_DIR}/json/single_include
-    ${PROJECT_SOURCE_DIR}/mongoose/
+    ${PROJECT_SOURCE_DIR}
+    ${PROJECT_SOURCE_DIR}/mongoose
 )
-print_include_directories()
 
-set(LIBRARY_NAME ${PROJECT_NAME})
-add_library(${LIBRARY_NAME} SHARED
-    ${PROJECT_SOURCE_DIR}/mongoose/mongoose.c
+add_library(${PROJECT_NAME} SHARED
+    mongoose/mongoose.c
 )
-# Install library
-install(TARGETS ${LIBRARY_NAME}
-    EXPORT ${PROJECT_EXPORT}
-    RUNTIME DESTINATION "${INSTALL_BIN_DIR}" COMPONENT bin
-    LIBRARY DESTINATION "${INSTALL_LIB_DIR}" COMPONENT shlib
-    ARCHIVE DESTINATION "${INSTALL_LIB_DIR}" COMPONENT stlib
-    COMPONENT dev)
-
-# Install header files, if set HEADER_ROOT, preserve directory structure, otherwise flatten it
-# #
-#     fmt/include/fmt/*.h
-#     json/single_include/nlohmann/json.hpp
-
-file(GLOB_RECURSE HEADERS
+install(FILES
     clipp/include/clipp.h
-    mongoose/mongoose.h
+    DESTINATION include/${PROJECT_NAME}
 )
-
-install(FILES ${file} DESTINATION "${INSTALL_INCLUDE_DIR}/${LIBRARY_FOLDER}")
-
-# include(cmake/InstallConfig.cmake)
+install(FILES
+    json/single_include/nlohmann/json.hpp
+    DESTINATION include/${PROJECT_NAME}/nlohmann
+)
+install(FILES
+    fmt/include/fmt/chrono.h
+    fmt/include/fmt/core.h
+    fmt/include/fmt/ostream.h
+    fmt/include/fmt/prepare.h
+    fmt/include/fmt/ranges.h
+    fmt/include/fmt/color.h
+    fmt/include/fmt/format.h
+    fmt/include/fmt/locale.h
+    fmt/include/fmt/posix.h
+    fmt/include/fmt/printf.h
+    fmt/include/fmt/time.h
+    DESTINATION include/${PROJECT_NAME}/fmt
+)
+install(TARGETS
+    ${PROJECT_NAME}
+    DESTINATION lib
+)
