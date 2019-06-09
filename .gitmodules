@@ -16,3 +16,6 @@
 [submodule "cpp-taskflow"]
 	path = cpp-taskflow
 	url = git://github.com/cpp-taskflow/cpp-taskflow.git
+[submodule "RxCpp"]
+	path = RxCpp
+	url = https://github.com/ReactiveX/RxCpp.git

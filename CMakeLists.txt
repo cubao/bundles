@@ -73,3 +73,5 @@ install(TARGETS
     ${PROJECT_NAME}
     DESTINATION lib
 )
+
+add_subdirectory(RxCpp)
