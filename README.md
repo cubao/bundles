@@ -2,9 +2,10 @@
 
 DON'T BUNDLE LOGGING LIBRARIES. JUST USE GLOG, GOOGLE TEST, GOOGLE BENCHMARK.
 
-Some small C++ libraries.
+Some common C++ libraries:
 
--   argparse: clipp/include/clipp.h
--   string formating: fmt/include/fmt
--   json: json/single_include/nlohmann/json.hpp
-
+-   clipp: Argparse for C++
+-   cpp-taskflow: Modern C++ Parallel Task Programming Library
+-   fmt: A modern formatting library
+-   json: JSON for Modern C++
+-   mongoose: Mongoose Embedded Web Server Library
