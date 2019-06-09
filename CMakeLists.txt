@@ -24,54 +24,25 @@ include_directories(
 add_library(${PROJECT_NAME} SHARED
     mongoose/mongoose.c
 )
+install(DIRECTORY RxCpp/Rx/v2/src/rxcpp/
+    DESTINATION include/${PROJECT_NAME}/rxcpp
+    FILES_MATCHING PATTERN "*.hpp"
+)
 install(FILES
     clipp/include/clipp.h
     DESTINATION include/${PROJECT_NAME}
+)
+install(DIRECTORY cpp-taskflow/taskflow/
+    DESTINATION include/${PROJECT_NAME}/taskflow
+)
+install(DIRECTORY fmt/include/fmt/
+    DESTINATION include/${PROJECT_NAME}/fmt
 )
 install(FILES
     json/single_include/nlohmann/json.hpp
     DESTINATION include/${PROJECT_NAME}/nlohmann
 )
 install(FILES
-    fmt/include/fmt/chrono.h
-    fmt/include/fmt/core.h
-    fmt/include/fmt/ostream.h
-    fmt/include/fmt/prepare.h
-    fmt/include/fmt/ranges.h
-    fmt/include/fmt/color.h
-    fmt/include/fmt/format.h
-    fmt/include/fmt/locale.h
-    fmt/include/fmt/posix.h
-    fmt/include/fmt/printf.h
-    fmt/include/fmt/time.h
-    DESTINATION include/${PROJECT_NAME}/fmt
+    mongoose/mongoose.h
+    DESTINATION include/${PROJECT_NAME}
 )
-
-function(install_directory src_dir dst_dir)
-    file(GLOB SRC_FILES ${src_dir}/*.*)
-    install(FILES ${SRC_FILES} DESTINATION ${dst_dir})
-endfunction()
-
-set(taskflow_include_dirs
-    .
-    utility
-    error
-    core
-    predef
-    predef/compiler
-    predef/os
-    predef/architecture
-)
-foreach(dir ${taskflow_include_dirs})
-    install_directory(
-        cpp-taskflow/taskflow/${dir}
-        include/${PROJECT_NAME}/taskflow/${dir}
-    )
-endforeach()
-
-install(TARGETS
-    ${PROJECT_NAME}
-    DESTINATION lib
-)
-
-add_subdirectory(RxCpp)
