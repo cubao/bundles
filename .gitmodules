@@ -13,3 +13,6 @@
 [submodule "mongoose"]
     path = mongoose
     url = https://github.com/cesanta/mongoose.git
+[submodule "cpp-taskflow"]
+	path = cpp-taskflow
+	url = git://github.com/cpp-taskflow/cpp-taskflow.git

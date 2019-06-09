@@ -46,6 +46,29 @@ install(FILES
     fmt/include/fmt/time.h
     DESTINATION include/${PROJECT_NAME}/fmt
 )
+
+function(install_directory src_dir dst_dir)
+    file(GLOB SRC_FILES ${src_dir}/*.*)
+    install(FILES ${SRC_FILES} DESTINATION ${dst_dir})
+endfunction()
+
+set(taskflow_include_dirs
+    .
+    utility
+    error
+    core
+    predef
+    predef/compiler
+    predef/os
+    predef/architecture
+)
+foreach(dir ${taskflow_include_dirs})
+    install_directory(
+        cpp-taskflow/taskflow/${dir}
+        include/${PROJECT_NAME}/taskflow/${dir}
+    )
+endforeach()
+
 install(TARGETS
     ${PROJECT_NAME}
     DESTINATION lib
