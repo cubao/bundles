@@ -9,3 +9,13 @@ Some common C++ libraries:
 -   fmt: A modern formatting library
 -   json: JSON for Modern C++
 -   mongoose: Mongoose Embedded Web Server Library
+
+## Install the bundle
+
+```bash
+make install
+
+# default to install headers & libs to ${HOME}/.cmake_install
+# can be overrided via
+CMAKE_PREFIX_INSTALL=/tmp/other/dir make install
+```
