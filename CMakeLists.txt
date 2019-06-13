@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(cubao_bundles)
 
 include(cmake/Utilities.cmake)
+include(cmake/SetEnv.cmake)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -46,3 +47,10 @@ install(FILES
     mongoose/mongoose.h
     DESTINATION include/${PROJECT_NAME}
 )
+
+install(TARGETS ${PROJECT_NAME}
+    EXPORT ${PROJECT_EXPORT}
+    RUNTIME DESTINATION "${INSTALL_BIN_DIR}" COMPONENT bin
+    LIBRARY DESTINATION "${INSTALL_LIB_DIR}" COMPONENT shlib
+    ARCHIVE DESTINATION "${INSTALL_LIB_DIR}" COMPONENT stlib
+    COMPONENT dev)
