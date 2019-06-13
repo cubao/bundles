@@ -4,6 +4,7 @@ DON'T BUNDLE LOGGING LIBRARIES. JUST USE GLOG, GOOGLE TEST, GOOGLE BENCHMARK.
 
 Some common C++ libraries:
 
+-   RxCpp: Reactive Extensions for C++
 -   clipp: Argparse for C++
 -   cpp-taskflow: Modern C++ Parallel Task Programming Library
 -   fmt: A modern formatting library
