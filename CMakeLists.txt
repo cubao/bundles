@@ -36,6 +36,10 @@ install(FILES
 install(DIRECTORY cpp-taskflow/taskflow/
     DESTINATION include/${PROJECT_NAME}/taskflow
 )
+install(FILES
+    cpptqdm/tqdm.h
+    DESTINATION include/${PROJECT_NAME}
+)
 install(DIRECTORY fmt/include/fmt/
     DESTINATION include/${PROJECT_NAME}/fmt
 )

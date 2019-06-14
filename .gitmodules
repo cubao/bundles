@@ -19,3 +19,6 @@
 [submodule "RxCpp"]
 	path = RxCpp
 	url = https://github.com/ReactiveX/RxCpp.git
+[submodule "cpptqdm"]
+	path = cpptqdm
+	url = https://github.com/aminnj/cpptqdm.git
