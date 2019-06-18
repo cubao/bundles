@@ -2,8 +2,8 @@ FROM cubao/basic-google-suit as build
 ADD . /tmp/code
 RUN cd /tmp/code && \
     sudo make clean && \
-    sudo mkdir dist && sudo chmod 777 -Rf dist && \
-    make install
+    sudo mkdir dist && \
+    sudo make install
 
 FROM cubao/basic-google-suit
 ENV USER=conan

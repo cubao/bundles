@@ -22,3 +22,6 @@
 [submodule "cpptqdm"]
 	path = cpptqdm
 	url = https://github.com/aminnj/cpptqdm.git
+[submodule "fx-gltf"]
+	path = fx-gltf
+	url = https://github.com/jessey-git/fx-gltf.git
