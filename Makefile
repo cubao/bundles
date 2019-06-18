@@ -22,12 +22,12 @@ build:
 			-DCMAKE_INSTALL_PREFIX=$(CMAKE_INSTALL_PREFIX) && \
 		make -j4
 
-DOCKER_BUILD_TAG := cubao/basic
+DOCKER_BUILD_TAG := cubao/basic-google-suit
 docker_test_build:
 	docker run --rm -v `pwd`:/workdir \
 		-it $(DOCKER_BUILD_TAG) zsh
 
-DOCKER_RELEASE_TAG := cubao/basic-bundles
+DOCKER_RELEASE_TAG := cubao/basic-google-suit-bundles
 docker_build:
 	docker build \
 		--tag $(DOCKER_RELEASE_TAG) .
