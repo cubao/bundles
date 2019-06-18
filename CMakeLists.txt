@@ -45,7 +45,7 @@ install(DIRECTORY fmt/include/fmt/
 )
 install(FILES
     fx-gltf/include/fx/gltf.h
-    DESTINATION include/${PROJECT_NAME}/fx/gltf.h
+    DESTINATION include/${PROJECT_NAME}/fx
 )
 install(FILES
     json/single_include/nlohmann/json.hpp
