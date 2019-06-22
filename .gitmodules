@@ -25,3 +25,6 @@
 [submodule "fx-gltf"]
 	path = fx-gltf
 	url = https://github.com/jessey-git/fx-gltf.git
+[submodule "dbg-macro"]
+	path = dbg-macro
+	url = https://github.com/sharkdp/dbg-macro.git

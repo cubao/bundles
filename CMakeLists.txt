@@ -40,6 +40,10 @@ install(FILES
     cpptqdm/tqdm.h
     DESTINATION include/${PROJECT_NAME}
 )
+install(FILES
+    dbg-macro/dbg.h
+    DESTINATION include/${PROJECT_NAME}
+)
 install(DIRECTORY fmt/include/fmt/
     DESTINATION include/${PROJECT_NAME}/fmt
 )
